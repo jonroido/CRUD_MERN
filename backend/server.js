@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Todo = require("./models/Todo");
 
-const db = "mongoDBURI";
+const db = "mongoURI";
 mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true });
 
 mongoose.connection.once("open", () => {
@@ -57,7 +57,7 @@ app.put("/:id", (req, res) => {
       res.status(404).send("Todo not found");
     } else {
       todo.text = req.body.text;
-
+      todo.description = req.body.description;
       todo
         .save()
         .then((todo) => {
