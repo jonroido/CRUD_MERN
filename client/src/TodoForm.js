@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 export const TodoForm = ({ todo, onSubmit }) => {
   const { register, handleSubmit } = useForm({
-    defaultValues: { text: todo ? todo.text : "" },
+    defaultValues: { text: todo ? todo.text : "", description: todo ?todo.description:"" },
   });
 
   const submitHandler = handleSubmit((data) => {
@@ -16,17 +16,17 @@ export const TodoForm = ({ todo, onSubmit }) => {
         <label htmlFor="text">Text:</label>
         <input
           className="form-control"
-          {...register('test', { required: true })}
+          {...register('text', { required: true })}
           type="text"
           name="text"
           id="text"
         />
       </div>
       <div className="form-group">
-        <label htmlFor="text">Description:</label>
+        <label htmlFor="description">Description:</label>
         <input
           className="form-control"
-          {...register('test', { required: true })}
+          {...register('description', { required: true })}
           type="text"
           name="description"
           id="description"
