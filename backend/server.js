@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const Todo = require("./models/Todo");
 
 const db = "mongoDBURI";
 mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true });
