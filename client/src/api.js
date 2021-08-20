@@ -6,3 +6,5 @@ export const createTodo = (todo) => fetch("http://localhost:4000/", {
   },
   body: JSON.stringify(todo)
 }) 
+
+export const getTodos = () => fetch("http://localhost:4000/").then(res => res.json())
